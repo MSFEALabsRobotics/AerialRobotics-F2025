@@ -1,3 +1,7 @@
+<img width="976" height="551" alt="image" src="https://github.com/user-attachments/assets/f76fc739-809b-4473-9418-6fe07614c0cb" />
+
+
+
 # WSL Setup Guide
 
 ---
