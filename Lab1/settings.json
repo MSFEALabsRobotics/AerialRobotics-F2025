@@ -2,8 +2,6 @@
   "SettingsVersion": 1.2,
   "LogMessagesVisible": true,
   "SimMode": "Multirotor",
-  "ApiServerAddress": "WINDOWSIP", 
-  "ApiServerPort": 5000,
   "OriginGeopoint": {
     "Latitude": -35.363261,
     "Longitude": 149.165230,
@@ -13,8 +11,8 @@
     "Copter": {
       "VehicleType": "ArduCopter",
       "UseSerial": false,
-      "LocalHostIp": "WINDOWSIP", 
-      "UdpIp": "WSLIP", 
+      "LocalHostIp": "172.28.144.1",
+      "UdpIp": "172.28.157.166",
       "UdpPort": 9002,
       "ControlPort": 9003,
       "Sensors": {
