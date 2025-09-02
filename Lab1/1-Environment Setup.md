@@ -100,14 +100,6 @@ Documents\AirSim
   code .
   ```
   This will open the editor in the current directory.
-
----
-
-### 📂 Cloning from GitHub
-```bash
-git clone repositoryaddress
-```
-
 ---
 
 ### ▶️ Running Example Scripts
