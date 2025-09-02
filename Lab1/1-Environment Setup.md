@@ -76,7 +76,7 @@ Documents\AirSim
 3. Replace both IPs in the following command:
 
 ```bash
-~/ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --console --map \ -A "--sim-address=172.28.144.1 --sim-port-in=9002 --sim-port-out=9003"  --out udp:127.0.0.1:14550
+~/ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --console --map \ -A "--sim-address=WINDOWSIP --sim-port-in=9002 --sim-port-out=9003"  --out udp:127.0.0.1:14550
 ```
 
 ---
@@ -86,7 +86,7 @@ Documents\AirSim
 2. Open a new terminal in **WSL (SITL)** and run:
 
 ```bash
-~/ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --console --map \ -A "--sim-address=172.28.144.1 --sim-port-in=9002 --sim-port-out=9003"  --out udp:127.0.0.1:14550
+~/ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --console --map \ -A "--sim-address=WINDOWSIP --sim-port-in=9002 --sim-port-out=9003"  --out udp:127.0.0.1:14550
 ```
 
 ---
