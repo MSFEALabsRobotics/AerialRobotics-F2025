@@ -2,11 +2,6 @@
   "SettingsVersion": 1.2,
   "LogMessagesVisible": true,
   "SimMode": "Multirotor",
-  "OriginGeopoint": {
-    "Latitude": -35.363261,
-    "Longitude": 149.165230,
-    "Altitude": 583
-  },
   "Vehicles": {
     "Copter": {
       "VehicleType": "ArduCopter",
@@ -14,35 +9,7 @@
       "LocalHostIp": "WINDOWSIP", 
       "UdpIp": "WSLIP", 
       "UdpPort": 9002,
-      "ControlPort": 9003,
-      "Sensors": {
-        "Distance1": {
-          "SensorType": 5,
-          "Enabled": true,
-          "X": 0.15,
-          "Y": 0.185,
-          "Z": 0,
-          "Yaw": 0,
-          "Pitch": 0,
-          "Roll": 0,
-          "MinDistance": 0.2,
-          "MaxDistance": 40.0,
-          "ExternalController": true
-        },
-        "Distance2": {
-          "SensorType": 5,
-          "Enabled": true,
-          "X": 0.15,
-          "Y": -0.185,
-          "Z": 0,
-          "Yaw": 0,
-          "Pitch": 0,
-          "Roll": 0,
-          "MinDistance": 0.2,
-          "MaxDistance": 40.0,
-          "ExternalController": true
-        }
-      }
+      "ControlPort": 9003
     }
   }
 }
