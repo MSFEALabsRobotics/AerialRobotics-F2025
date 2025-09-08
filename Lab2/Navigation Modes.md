@@ -53,40 +53,53 @@ time.sleep(8)  # wait until we climb
 
 ---
 
+<img width="701" height="475" alt="image" src="https://github.com/user-attachments/assets/b72abae0-bcbf-468e-b5b2-bdd1a0ad8057" />
+
+
 ## 3. Controlling Drone with Velocity Commands (non-blocking)
 
 ```python
-def send_velocity_body(vx, vy, vz, yaw_rate, duration):
-    """
-    Send velocity command in the drone BODY frame.
-    vx: forward  (m/s)
-    vy: right    (m/s)
-    vz: down     (m/s)  (negative = up)
-    yaw_rate: yaw rate (rad/s)
-    duration: seconds
-    """
-    msg = master.mav.set_position_target_local_ned_encode(
-        0,
-        master.target_system,
-        master.target_component,
-        mavutil.mavlink.MAV_FRAME_BODY_NED,
-        0b0000011111000111,  # ignore pos/accel, enable vel + yaw_rate
-        0, 0, 0,
-        vx, vy, vz,
-        0, 0, 0,
-        0, yaw_rate
-    )
 
-    for _ in range(int(duration * 10)):  # send at 10 Hz
-        master.mav.send(msg)
-        time.sleep(0.1)
+"""
+Send velocity command in the drone BODY frame.
+vx: forward  (m/s)
+vy: right    (m/s)
+vz: down     (m/s)  (negative = up)
+yaw_rate: yaw rate (rad/s)
+duration: seconds
+"""
+msg = master.mav.set_position_target_local_ned_encode(
+    0,
+    master.target_system,
+    master.target_component,
+    mavutil.mavlink.MAV_FRAME_BODY_NED,
+    0b0000011111000111,  # ignore pos/accel, enable vel + yaw_rate
+    0, 0, 0,
+    vx, vy, vz,
+    0, 0, 0,
+    0, yaw_rate
+)
+
+
 ```
 
+
+### Creating A loop for instant control per frequency
+
+```python
+
+  for _ in range(int(duration * 10)):  # send at 10 Hz
+        master.mav.send(msg)
+        time.sleep(0.1)
+
+
+```
+  
+        
 ### Exercise: Keyboard Control
 
 ```python
-# WSL-safe keyboard example using input()
-# Blocking: waits for user to press ENTER after each key
+
 
 print("Control Your Drone With Some Input Commands")
 
