@@ -59,27 +59,59 @@ time.sleep(8)  # wait until we climb
 ## 3. Controlling Drone with Velocity Commands (non-blocking)
 
 ```python
+import time
+import math
+from pymavlink import mavutil
 
-"""
-Send velocity command in the drone BODY frame.
-vx: forward  (m/s)
-vy: right    (m/s)
-vz: down     (m/s)  (negative = up)
-yaw_rate: yaw rate (rad/s)
-duration: seconds
-"""
-msg = master.mav.set_position_target_local_ned_encode(
-    0,
-    master.target_system,
-    master.target_component,
-    mavutil.mavlink.MAV_FRAME_BODY_NED,
-    0b0000011111000111,  # ignore pos/accel, enable vel + yaw_rate
-    0, 0, 0,
-    vx, vy, vz,
-    0, 0, 0,
-    0, yaw_rate
-)
+# ---- Connect to SITL ----
+master = mavutil.mavlink_connection('udp:127.0.0.1:14550')
+master.wait_heartbeat()
+print(f"Connected: system {master.target_system}, component {master.target_component}")
 
+# ---- Helper: send local waypoint + yaw ----
+def goto_position_target_local_ned_with_yaw(x, y, z, yaw_deg):
+    """
+    Move vehicle to a target position (x,y,z) in LOCAL_NED frame
+    and face a given yaw angle (absolute).
+    NED frame:
+      x → forward (north)
+      y → right (east)
+      z → down (positive down, negative up)
+    yaw_deg → heading in degrees (0 = North, 90 = East, etc.)
+    """
+    yaw_rad = math.radians(yaw_deg)
+    master.mav.set_position_target_local_ned_send(
+        0,  # time_boot_ms
+        master.target_system,
+        master.target_component,
+        mavutil.mavlink.MAV_FRAME_LOCAL_NED,
+        0b0000111111111000,  # position + yaw
+        x, y, z,             # target position (meters)
+        0, 0, 0,             # velocity (not used)
+        0, 0, 0,             # acceleration (not used)
+        yaw_rad, 0           # yaw (rad), yaw_rate
+    )
+
+#
+# ---- Main Mission ----
+if __name__ == "__main__":
+#arm_and_takeoff(5)
+
+    # Define waypoints (x, y, z, yaw_deg)
+    waypoints = [
+        (5, 0, -5,   90),   # forward 5m, face East
+        (5, 5, -5, 180),   # right 5m, face South
+        (0, 5, -5, -90),   # back 5m, face West
+        (0, 0, -5,   0)    # return home, face North
+    ]
+
+    # Fly through waypoints with yaw
+    for (x, y, z, yaw) in waypoints:
+        print(f"Going to waypoint: x={x}, y={y}, z={z}, yaw={yaw}°")
+        goto_position_target_local_ned_with_yaw(x, y, z, yaw)
+        time.sleep(10)
+
+    print("Mission complete!")
 
 ```
 
