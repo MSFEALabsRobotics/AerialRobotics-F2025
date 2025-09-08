@@ -1,0 +1,8 @@
+Settings if dron3 arming is delayed not starting
+check if can be done in python
+parameter in console
+editor
+ARMING_CHECK to 0
+EK3_GPS_CHECK to 0
+write to save settings
+
