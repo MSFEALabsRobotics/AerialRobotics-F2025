@@ -4,6 +4,10 @@ This tutorial introduces **latitude** and **longitude**, how they are used in GP
 
 ---
 
+
+
+<img width="650" height="333" alt="image" src="https://github.com/user-attachments/assets/6f0287a1-a407-40c3-9a43-4de01654cff4" />
+
 ## 🌍 What are Latitude and Longitude?
 
 - **Latitude (lat)** measures how far north or south a point is from the equator, expressed in degrees (−90° to +90°).  
