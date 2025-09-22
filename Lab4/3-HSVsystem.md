@@ -21,8 +21,8 @@ img = cv2.imread("image.jpg")
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 # Define a color range (example: detect blue)
-lower_blue = np.array([100, 150, 50])   # H, S, V lower bound
-upper_blue = np.array([140, 255, 255])  # H, S, V upper bound
+lower_blue = np.array([90, 50, 50])
+upper_blue = np.array([140, 255, 255])
 
 # Create a mask (white where blue is found)
 mask = cv2.inRange(hsv, lower_blue, upper_blue)
