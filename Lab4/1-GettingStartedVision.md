@@ -51,7 +51,27 @@ cv2.waitKey(0)
 
 ---
 
-## 6. Drawing on the Image
+## 6. Modify One Pixel Value
+```python
+# Make the pixel at (50, 100) red (BGR format → (0, 0, 255))
+img[50, 100] = [0, 0, 255]
+
+cv2.imshow("Modified Pixel", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+---
+
+## 7. Saving an Image with imwrite
+```python
+cv2.imwrite("output_image.jpg", img)
+print("Image saved as output_image.jpg")
+```
+
+---
+
+## 8. Drawing on the Image
 ```python
 # Copy first
 drawn = img.copy()
@@ -75,7 +95,7 @@ cv2.waitKey(0)
 <img width="769" height="563" alt="image" src="https://github.com/user-attachments/assets/b9860776-60f7-483c-b91a-67f100423853" />
 
 
-## 7. Gaussian Blur
+## 9. Gaussian Blur
 ```python
 blur = cv2.GaussianBlur(img, (7,7), 1)
 cv2.imshow("Blur", blur)
@@ -84,7 +104,7 @@ cv2.waitKey(0)
 
 ---
 
-## 8. Thresholding
+## 10. Thresholding
 ```python
 _, th = cv2.threshold(gray, 120, 255, cv2.THRESH_BINARY)
 cv2.imshow("Threshold", th)
@@ -93,32 +113,12 @@ cv2.waitKey(0)
 
 ---
 
-## 9. Canny Edge Detection
+## 11. Canny Edge Detection
 ```python
 edges = cv2.Canny(gray, 100, 200)
 cv2.imshow("Canny Edges", edges)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-```
-
----
-
-## 10. Modify One Pixel Value
-```python
-# Make the pixel at (50, 100) red (BGR format → (0, 0, 255))
-img[50, 100] = [0, 0, 255]
-
-cv2.imshow("Modified Pixel", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
----
-
-## 11. Saving an Image with imwrite
-```python
-cv2.imwrite("output_image.jpg", img)
-print("Image saved as output_image.jpg")
 ```
 
 ---
