@@ -72,6 +72,9 @@ cv2.waitKey(0)
 
 ---
 
+<img width="769" height="563" alt="image" src="https://github.com/user-attachments/assets/b9860776-60f7-483c-b91a-67f100423853" />
+
+
 ## 7. Gaussian Blur
 ```python
 blur = cv2.GaussianBlur(img, (7,7), 1)
