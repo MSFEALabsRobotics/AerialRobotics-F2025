@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Replace with Windows host IP
-client = airsim.MultirotorClient(ip="172.29.160.1")
+client = airsim.MultirotorClient(ip="WINDOWSIP")
 client.confirmConnection()
 
 
