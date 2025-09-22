@@ -1,0 +1,2 @@
+Practice:
+Apply speed and position commands, so you are able to hit the orange ball (Open Loop)
