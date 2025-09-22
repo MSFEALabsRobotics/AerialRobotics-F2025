@@ -102,3 +102,47 @@ cv2.destroyAllWindows()
 ```
 
 ---
+
+## 10. Modify One Pixel Value
+```python
+# Make the pixel at (50, 100) red (BGR format → (0, 0, 255))
+img[50, 100] = [0, 0, 255]
+
+cv2.imshow("Modified Pixel", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+---
+
+## 11. Saving an Image with imwrite
+```python
+cv2.imwrite("output_image.jpg", img)
+print("Image saved as output_image.jpg")
+```
+
+---
+
+## 12. Keyboard Interaction
+```python
+import cv2
+
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Keyboard Demo", gray_img)
+
+print("Press 'q' to quit or 's' to save the grayscale image as 'saved_gray.jpg'")
+
+while True:
+    key = cv2.waitKey(1) & 0xFF
+
+    if key == ord('q'):  # Quit on pressing 'q'
+        break
+
+    elif key == ord('s'):  # Save the grayscale image on pressing 's'
+        cv2.imwrite('saved_gray.jpg', gray_img)
+        print("Grayscale image saved as 'saved_gray.jpg'.")
+
+cv2.destroyAllWindows()
+```
+
+---
