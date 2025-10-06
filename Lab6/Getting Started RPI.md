@@ -22,10 +22,6 @@ Choose either:
 
 1. Open **Raspberry Pi Imager**  
 2. Select the OS and the SD card  
-3. (Optional) Configure:
-   - Hostname  
-   - Wi-Fi SSID & Password  
-   - Enable SSH  
 4. Click **Write** to flash the image  
 5. Insert the SD card into the Pi
 
@@ -35,14 +31,14 @@ Choose either:
 
 1. Connect:
    - HDMI display  
-   - Keyboard & mouse  
+   - Keyboard
    - Power supply  
 2. Boot up and open terminal  
 3. Run configuration:
    ```bash
    sudo raspi-config
    ```
-   - Set Wi-Fi country and connect to network  
+   - Set Wi-Fi country as US and connect to network  
    - Enable **SSH** (used for remote connection)  
 
 ---
@@ -62,10 +58,6 @@ sudo apt install python3-pip python3-numpy python3-msgpack python3-setuptools py
 ```bash
 pip install numpy msgpack-rpc-python tornado backports.ssl_match_hostname --break-system-packages
 pip install --no-build-isolation airsim --break-system-packages
-```
-
-If AirSim fails due to OpenCV dependency (`libGL.so.1` missing), install:
-```bash
 sudo apt install -y libgl1 libglib2.0-0
 ```
 
@@ -102,35 +94,8 @@ netsh advfirewall firewall add rule name="WSL MAVLink" dir=in action=allow proto
 
 ## 8️⃣ Test AirSim Python Connection
 
-Create a simple test file `HelloAirSim.py`:
-```python
-import airsim
+Create a simple test file Hello Airsim Frame.py
 
-client = airsim.MultirotorClient()
-client.confirmConnection()
-print("Connected to AirSim!")
-```
-
-Run:
-```bash
-python3 HelloAirSim.py
-```
 
 ---
 
-## ✅ Summary
-
-| Step | Purpose |
-|------|----------|
-| Raspberry Pi Imager | Prepare SD card |
-| raspi-config | Set Wi-Fi, enable SSH |
-| Python + pip setup | Required for AirSim client |
-| pymavlink | Enable MAVLink communication |
-| Windows firewall rules | Allow Pi to communicate with AirSim on Windows |
-| Test script | Confirm connection |
-
----
-
-**Author:** Samer Bou Karam  
-**Project:** Aerial Robotics @ AUB  
-**Last Updated:** October 2025
