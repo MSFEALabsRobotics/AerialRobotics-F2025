@@ -51,6 +51,3 @@ The system should be able to recognize and react to at least the following actio
 
 ---
 
-**Author:** Samer Bou Karam  
-**Course:** Aerial Robotics @ AUB  
-**Last Updated:** October 2025
