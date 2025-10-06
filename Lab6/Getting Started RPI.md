@@ -39,7 +39,8 @@ Choose either:
    sudo raspi-config
    ```
    - Set Wi-Fi country as US and connect to network  
-   - Enable **SSH** (used for remote connection)  
+   - Enable **SSH** (used for remote connection)
+   - ssh username@ipaddress
 
 ---
 
