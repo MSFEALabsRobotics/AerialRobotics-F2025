@@ -1,0 +1,5 @@
+Open Session: Computing on the raspberry pi
+1 How FPS are you getting on your orange detection on the rasppberrry pi
+2 Apply Hello World Yolo on an image on your laptop (WSL) what is the average Inference time (object detection, Pose Detection) show results
+3 Apply Hello world Yolo on the Pi , what is average inference time
+4 Use Raspberry Pi camera, to capture realtime, frames, and evaluate on board, CV2 and Yolo Detection
