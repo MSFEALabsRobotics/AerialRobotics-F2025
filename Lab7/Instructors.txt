@@ -1,8 +1,5 @@
 Open Session: Computing on the raspberry pi
-1 How FPS are you getting on your orange detection on the rasppberrry pi
-2 Drive The Drone Based from the PI, based on feedback
-3 Use Raspberry Pi camera, to capture realtime, frames, and evaluate on board, CV2 and Yolo Detection
-4 Apply Hello World Yolo on an image on your laptop (WSL) what is the average Inference time (object detection, Pose Detection) show results
-5 Apply Hello world Yolo on the Pi , what is average inference time
-
+1 Create a script that gets Video (not a single frame) from Airsim, and makes the detection with CV2 on the PI. EVALUTA FPS
+2 Use the raspberry Pi Camera to get a frame instead of Airsim, and apply same detection.
+3 Drive The Drone in AIrsim through mavlink form the PI (PI WILL CONTROL SITL IN WSL)
 
