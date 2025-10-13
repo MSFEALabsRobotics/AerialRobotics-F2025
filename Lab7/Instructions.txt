@@ -3,3 +3,7 @@ Open Session: Computing on the raspberry pi
 2 Use the raspberry Pi Camera to get a frame instead of Airsim, and apply same detection.
 3 Drive The Drone in AIrsim through mavlink form the PI (PI WILL CONTROL SITL IN WSL)
 
+TO SEND MAVLINK COMMANDS FROM THE PI< 
+EXPOSE YOUR SITL BY ADDING THE PI-IPADDRESS AT THE END OF THE LAUNCH
+
+~/ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter -f airsim-copter --console --map \ -A "--sim-address=WINDOWSIP --sim-port-in=9002 --sim-port-out=9003" --out udp:PI-IPADRESS:14550
